@@ -1,0 +1,5 @@
+*.pyc
+.cache
+dist
+unum.egg-info
+docs/build/**

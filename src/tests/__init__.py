@@ -20,7 +20,7 @@ def test_addition():
 
 def test_unitless():
     assert_almost_equal(math.log10(1000*m/m), 3.0)
-    assert_raises(unum.ShouldBeUnitlessError, lambda: math.cos(2*mA)) 
+    assert_raises(unum.ShouldBeUnitlessError, lambda: math.cos(2*mA))
 
 def test_name_conflict():
     MY_UNIT = unum.Unum.unit("myunit", 0, "my_new_unit") #@UnusedVariable
@@ -48,22 +48,22 @@ def test_fractions():
 def test_numpy():
     try: from numpy import array, ndarray
     except ImportError: raise nose.SkipTest
-    
+
     # Left multiply: array of Unum
     arr = array([2,3,4]) * ns
     assert isinstance(arr, ndarray)
     assert isinstance(arr[0], unum.Unum)
-    
+
     # Right multiply: Unum containing array
     arr = ns * array([2,3,4])
     assert isinstance(arr, unum.Unum)
     assert isinstance(arr.asNumber(), ndarray)
-    
+
     # Helper function: like right multiply
     arr = unum.uarray([2,3,4])
     assert isinstance(arr, unum.Unum)
     assert isinstance(arr.asNumber(), ndarray)
-   
+
 def test_case_sensitive():
     # Test fix for issue #2 with seconds/Siemens confusion
     assert_raises(unum.IncompatibleUnitsError, lambda: S.asUnit(h))
