@@ -7,6 +7,7 @@ Introduction
 Unum stands for 'unit-numbers'. It is a Python module that allows you to define and manipulate quantities with units attached such as 60 seconds, 500 watts, 42 miles-per-hour, 100 kg per square meter, 14400 bits per second, 30 dollars, and so on. 
 
 Features include:
+
 - Exceptions for incorrect use of units.
 - Automatic and manual conversion between compatible units.
 - Easily extended to arbitrary units.
@@ -80,16 +81,12 @@ Unums are automatically coerced back to regular numbers where legal and desirabl
 Installation
 ============
 
-Unum requires Python 2.2 or higher. Python 3.x should be supported as well, but please report any bugs!
+Unum is pure python package. Python 2.2 or higher needed. Python 3.x work as well.
 
-If you have setuptools installed, you can install or upgrade to the latest version of Unum using easy_install::
+Unum is available through PyPI and can be easy installed using ``pip`` command ::
 
-    easy_install Unum
-    
-On Mac OS X and Linux you may need to run the above as a privileged user; for example::
+    pip install unum
 
-    sudo easy_install Unum
-    
 Alternately, you can obtain the source code and type::
 
     python setup.py install
@@ -269,6 +266,30 @@ Placing this module anywhere on your Python path will allow you to do::
     >>> from my_spam import *
 
 and have your units available.
+
+=================================
+Beware of the name conflict issue
+=================================
+
+It is a good practice to use: ::
+    
+    import unum.units as u
+    
+instead of: ::
+    
+    from unum.units import *
+    
+In that case all your units will be holded inside ``u`` object so you can still defind for example ``m`` and ``g`` variables during your calculations and not afraid that you overrid the meter and gram unit definition. ::
+
+    >>> import unum.units as u
+    >>> m = 2.3*u.kg
+    >>> g = 10 * u.m/u.s**2
+    >>> F = m * g
+    >>> F
+    23.0 [kg.m/s2]
+    >>> F.asUnit(u.N)
+    >>> F.asUnit(u.N)
+    23.0 [N]
 
 ================
 Predefined units
