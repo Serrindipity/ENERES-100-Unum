@@ -1,17 +1,15 @@
 from setuptools import setup
 
-__version_info__ = (4, 2, 1)
-__version__ = '.'.join([str(v) for v in __version_info__])
 setup(
-      name = "Unum_test",
-      version = __version__,
-      description  = "Units in Python",
+      name = 'Unum',
+      version = '4.2.1',
+      description  = 'Units in Python',
       long_description = open("README.rst").read(),
-      author = "Chris MacLeod, Pierre Denis, Lukasz Laba",
-      author_email = "lukaszlaba@gmail.com",
-      url = "https://unum.readthedocs.io/",
+      author = 'Chris MacLeod, Pierre Denis, Lukasz Laba',
+      author_email = 'lukaszlaba@gmail.com',
+      url = 'https://unum.readthedocs.io/',
       tests_require=['nose>=0.11'],
-      test_suite="nose.collector",
+      test_suite='nose.collector',
       license = 'GNU General Public License (GPL)',
       keywords = 'si units, calculations, math, unit system',
       classifiers=  [

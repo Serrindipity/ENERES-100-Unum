@@ -1,7 +1,7 @@
 Unum - units in python
 ----------------------
 
-In case you make scientific or engineering calculation it is a best practice, always include units when you define variables if they are relevant. For example, if you define velocity to be 100, and time to be 0.5, Python cannot perform unit checking or unit balancing when you calculate the distance. It is a better practice to define the velocity as 100 km/h and the time as 30 min. It can also prevent errors later on. There are few 'Famous Unit Conversion Errors' that occurred because of unit calculation issue.
+If you make scientific or engineering calculation it is a best practice, always include units when you define variables if they are relevant. For example, if you define velocity to be 100, and time to be 0.5, Python cannot perform unit checking or unit balancing when you calculate the distance. It is a better practice to define the velocity as 100 km/h and the time as 30 min. It can also prevent errors later on. There are few 'Famous Unit Conversion Errors' that occurred because of unit calculation issue.
 
 Since the pure Python has no feature that let you make unit calculation you neeed additional package for that. Unum can handle units for you, there's a large list of built-in units available for the most common applications that could be easily extended by the user. Unum automatically carries units forward throughout calculations, always checking to make sure that the units being used in formulas and equations are dimensionally compatible. It warns you if you try to perform math with quantities in incompatible units. For example, you get an error notification if you try to add quantities of length, temperature, time, and energy together.
 
@@ -11,7 +11,7 @@ Changelog
 ---------
 Unum 4.2.1
 
-- This version do not include any change for core of Unum so it work exactly as the previous version.
+- This version do not include any changes for core of Unum so it work exactly as the previous version.
 - Structure of code source updated.
 - Readme file updated to meet the PyPI requirement.
 - Project documentation (docs) added in Sphinx format.
@@ -38,7 +38,7 @@ Unum is available through PyPI and can be easy installed using ``pip`` command :
 Alternately, you can obtain the source code and type::
 
     python setup.py install
-    
+
 in the source code directory.
 
 
@@ -74,21 +74,16 @@ Questions, feedback and issues can be reported at `Bitbucket Issues Tracker <htt
 License
 -------
 
-Copyright (C) 2000-2003 Pierre Denis
-
-Copyright (C) 2009-2018 Chris MacLeod
-
-Copyright (C) 2022 Lukasz Laba
-
+Copyright (C) 2000-2003 Pierre Denis, 2009-2018 Chris MacLeod, 2022 Lukasz Laba.
 
 Unum is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, o (at your option) any later version.
 
 Unum is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License along with Tebe; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+You should have received a copy of the GNU General Public License along with Unum; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-Other information
------------------
+Other informations
+------------------
 
 Project website: https://unum.readthedocs.io
 

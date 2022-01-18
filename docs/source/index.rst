@@ -15,19 +15,18 @@ In case you make scientific or engineering calculation it is a best practice, al
 
 Since the pure Python has no feature that let you make unit calculation you neeed additional package for that. Unum can handle units for you, there's a large list of built-in units available for the most common applications that could be easily extended by the user. Unum automatically carries units forward throughout calculations, always checking to make sure that the units being used in formulas and equations are dimensionally compatible. It warns you if you try to perform math with quantities in incompatible units. For example, you get an error notification if you try to add quantities of length, temperature, time, and energy together.
 
-
+User Guide
+----------
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    unum
 
+About
+-----
+.. toctree::
+   :maxdepth: 2
+
+   info
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

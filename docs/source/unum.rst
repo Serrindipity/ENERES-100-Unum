@@ -279,7 +279,7 @@ instead of: ::
     
     from unum.units import *
     
-In that case all your units will be holded inside ``u`` object so you can still defind for example ``m`` and ``g`` variables during your calculations and not afraid that you overrid the meter and gram unit definition. ::
+In that case all your units will be holded inside ``u`` object so you can still define for example ``m`` and ``g`` variables during your calculations and not afraid that you overwrite the meter and gram unit definition. ::
 
     >>> import unum.units as u
     >>> m = 2.3*u.kg
