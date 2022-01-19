@@ -89,7 +89,7 @@ Project website: https://unum.readthedocs.io
 
 Code repository: https://bitbucket.org/lukaszlaba/unum
 
-Contact: Lukasz Laba <lukaszlaba@gmail.pl>
+Contact: Lukasz Laba <lukaszlaba@gmail.com>
 
 
 
