@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(
-      name = 'Unum',
-      version = '4.2.1',
-      description  = 'Units in Python',
+      name = 'eneres_100_unum',
+      version = '0.1.0',
+      description  = 'Custom fork of Unum for ENERES 100',
       long_description = open("README.rst").read(),
       author = 'Chris MacLeod, Pierre Denis, Lukasz Laba',
       author_email = 'lukaszlaba@gmail.com',
