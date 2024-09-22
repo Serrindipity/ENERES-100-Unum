@@ -3,6 +3,7 @@
 # TODO: consider alternatives to unum and see how they compare.
 """
 import sys
+from decimal import Decimal
 
 __version__ = '04.02'
 
@@ -82,7 +83,7 @@ class Unum(object):
     UNIT_SORTING = True
     """If True, units are sorted alphabetically for display."""
     
-    VALUE_FORMAT = "%s"
+    VALUE_FORMAT = "%e"
     """Format string for value."""
     
     AUTO_NORM = True
@@ -113,8 +114,9 @@ class Unum(object):
         raises UnumError exception if conv is a unum
                 although unit and value do not represent a basic unit
         """
-        object.__init__(self)        
-        self._value = value
+        object.__init__(self)
+        # Custom: always wrap value in decimal wrapper     
+        self._value = Decimal(value)
         self._unit = unit
         if conv is None:
             self._normal = False
@@ -445,7 +447,7 @@ class Unum(object):
         def fmt(exp):
             f = ''
             if exp != 1:
-                f = str(exp)
+                f = '^' + str(exp)
             return f
         numer, denom = '', ''
         units = list(self._unit.items())       
@@ -514,6 +516,14 @@ class Unum(object):
         else:
             return Unum(Unum._NO_UNIT, value)
     coerceToUnum = staticmethod(coerceToUnum)
+
+    # Custom
+    def round(self, places: int):
+        return Unum(self._unit.copy(), round(self.asNumber(), places - 1))
+    
+    def round_in_place(self, places: int):
+        self._value = round(self.asNumber(), places - 1)
+
 
 # Maintain API compatibility with Unum 4 and lower.
 # "as" became a reserved word in 2.5, so we can't use it.

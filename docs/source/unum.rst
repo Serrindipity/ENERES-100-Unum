@@ -1,4 +1,11 @@
 ============
+MODIFICATIONS
+============
+This is a custom fork of the unum python library for ENE,RES C100 taught at UC Berkeley. It is meant to be a dependency for the ENERES-C100-HW-Libraries package.
+
+The following is the remaining, unchanged documentation for the unum library.
+
+============
 Introduction
 ============
 

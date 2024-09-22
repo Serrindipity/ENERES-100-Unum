@@ -9,7 +9,7 @@ unit = Unum.unit
 
 min        = MIN      = unit( 'min'      , 60 * s            , 'minute'                    )
 h          = H        = unit( 'h'        , 60 * MIN          , 'hour'                      )
-d          = D        = unit( 'd'        , 24 * H            , 'day'                       )
+d = day    = D        = unit( 'd'        , 24 * H            , 'day'                       )
 deg        = ARCDEG   = unit( 'deg'      , pi/180 * RAD      , 'degree (angle)'            )
 arcmin     = ARCMIN   = unit( "'"        , ARCDEG / 60       , 'minute (angle)'            )
 arcsec     = ARCSEC   = unit( "''"       , ARCMIN / 60       , 'second (angle)'            )
