@@ -524,6 +524,10 @@ class Unum(object):
     def round_in_place(self, places: int):
         self._value = round(self.asNumber(), places - 1)
 
+    def asPercent(self):
+        self.checkNoUnit()
+        return '{:.5%}'.format(self._value)
+
 
 # Maintain API compatibility with Unum 4 and lower.
 # "as" became a reserved word in 2.5, so we can't use it.
