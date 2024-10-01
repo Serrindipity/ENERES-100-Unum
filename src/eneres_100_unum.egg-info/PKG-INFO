@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: eneres_100_unum
+Version: 0.1.0
+Summary: Custom fork of Unum for ENERES 100
+Home-page: https://unum.readthedocs.io/
+Author: Chris MacLeod, Pierre Denis, Lukasz Laba
+Author-email: lukaszlaba@gmail.com
+License: GNU General Public License (GPL)
+Keywords: si units,calculations,math,unit system
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Education
+Requires-Python: >=2.4, <4
+License-File: LICENSE.txt
+
+MODIFICATIONS
+_______
+
+This is a custom fork of the unum python library for ENE,RES C100 taught at UC Berkeley. It is meant to be a dependency for the ENERES-100-HW-Libraries package.
+
+License
+-------
+
+Copyright (C) 2000-2003 Pierre Denis, 2009-2018 Chris MacLeod, 2022 Lukasz Laba.
+
+Unum is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, o (at your option) any later version.
+
+Unum is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with Unum; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+Original Project Information
+------------------
+
+Project website: https://unum.readthedocs.io
+
+Code repository: https://bitbucket.org/lukaszlaba/unum
+
+Contact: Lukasz Laba <lukaszlaba@gmail.com>
+
+
+
