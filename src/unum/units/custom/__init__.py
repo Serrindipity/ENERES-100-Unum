@@ -65,6 +65,7 @@ Btu = btu = unit('Btu', J * 1055, 'british-thermal-unit')
 MBtu = mbtu = unit('MBtu', Btu * 10**6, 'mega-btu')
 foot = ft = unit('ft', m * 0.3048, 'foot')
 acre = unit('acre', 4048 * ft**2, 'acre')
+dollar = unit('dollar', 0, 'dollar')
 
 # SI prefixes for watts
 YW = unit("YW", 10**24 * W, "yottawatt")    # Yottawatt
