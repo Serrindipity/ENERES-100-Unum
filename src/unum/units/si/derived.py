@@ -23,7 +23,7 @@ Wb         = WB      = unit( 'Wb'    , V * s          , 'weber'          )
 T          = T       = unit( 'T'     , WB / M**2      , 'tesla'          )
 H          = HENRY   = unit( 'H'     , WB / A         , 'henry'          )
 # warning : conversion assumes relative temperatures
-celsius    = CELSIUS = unit( 'deg C' , K + 273.15     , 'degree Celsius' )  
+celsius    = CELSIUS = unit( 'deg C' , K + 273.15*K     , 'degree Celsius' )  
 lm         = LM      = unit( 'lm'    , CD * SR        , 'lumen'          )
 lx         = LX      = unit( 'lx'    , LM / M**2      , 'lux'            )
 Bq         = BQ      = unit( 'Bq'    , 1 / s          , 'becquerel'      )
