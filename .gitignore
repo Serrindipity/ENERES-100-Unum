@@ -1,7 +1,6 @@
 *.pyc
 .cache
 setup.cfg
-dist
 unum.egg-info
 docs/build/**
 .DS_Store

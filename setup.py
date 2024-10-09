@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
       name = 'eneres_100_unum',
-      version = '0.1.0',
+      version = '0.1.1',
       description  = 'Custom fork of Unum for ENERES 100',
       long_description = open("README.rst").read(),
       author = 'Chris MacLeod, Pierre Denis, Lukasz Laba',
