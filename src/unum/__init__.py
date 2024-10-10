@@ -518,7 +518,7 @@ class Unum(object):
     coerceToUnum = staticmethod(coerceToUnum)
 
     # Custom
-    def round(self, places: int):
+    def __round__(self, places: int):
         return Unum(self._unit.copy(), round(self.asNumber(), places - 1))
     
     def round_in_place(self, places: int):
