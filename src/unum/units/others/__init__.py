@@ -14,7 +14,7 @@ deg        = ARCDEG   = unit( 'deg'      , pi/180 * RAD      , 'degree (angle)' 
 arcmin     = ARCMIN   = unit( "'"        , ARCDEG / 60       , 'minute (angle)'            )
 arcsec     = ARCSEC   = unit( "''"       , ARCMIN / 60       , 'second (angle)'            )
 l          = L        = unit( 'L'        , 1E-3 * M**3       , 'liter'                     )
-t          = TON      = unit( 't'        , 1E3 * KG          , 'metric ton'                )
+tonne          = TONNE      = unit( 't'        , 1E3 * KG          , 'metric ton'                )
 Np         = NP       = unit( 'Np'       , 1                 , 'neper'                     )
 dB         = DECIBEL  = unit( 'dB'       , 0                 , 'decibel'                   )
 eV         = EV       = unit( 'eV'       , 1.60218E-19 * J   , 'electronvolt'              )
