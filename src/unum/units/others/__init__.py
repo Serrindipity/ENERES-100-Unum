@@ -38,5 +38,5 @@ rem        = REM      = unit( 'rem'      , 1E-2 * SV         , 'rem'            
 
 # cleaning
 del Unum
-del unit
+# del unit
 del pi
