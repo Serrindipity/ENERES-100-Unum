@@ -2,3 +2,4 @@
 
 from unum.units.others import *
 from unum.units.custom import *
+from unum.units import unit
