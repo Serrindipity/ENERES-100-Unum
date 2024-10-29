@@ -77,7 +77,7 @@ class Unum(object):
     UNIT_INDENT = " "
     """Separator between value and unit."""
     
-    UNIT_HIDE_EMPTY = False
+    UNIT_HIDE_EMPTY = True
     """If True, unitless unums are displayed as raw numbers."""
     
     UNIT_SORTING = True
