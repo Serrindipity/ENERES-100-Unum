@@ -368,9 +368,10 @@ class Unum(object):
 
     def __eq__(self, other):
         # Returns True if both values are 0. This is a shortcut to make unitest's assertAlmostEqual() work.
-        s, o = self.matchUnits(Unum.coerceToUnum(other))
-        if not s._value and not o._value:
+        o = Unum.coerceToUnum(other)
+        if not s._value and o._value:
             return True
+        s, o = self.matchUnits(o)
         return s._value == o._value
 
     def __ne__(self, other):
