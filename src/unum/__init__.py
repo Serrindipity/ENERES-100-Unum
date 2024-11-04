@@ -369,7 +369,7 @@ class Unum(object):
     def __eq__(self, other):
         # Returns True if both values are 0. This is a shortcut to make unitest's assertAlmostEqual() work.
         s, o = self.matchUnits(Unum.coerceToUnum(other))
-        if not self._value and not other._value:
+        if not s._value and not o._value:
             return True
         return s._value == o._value
 
