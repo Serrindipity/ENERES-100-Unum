@@ -438,8 +438,6 @@ class Unum(object):
         u = Unum.coerceToUnum(value)        
         self._value[index] = u.asNumber(Unum(self._unit, 1))
 
-    def __len__(self):
-        return len(self._value)
 
     # -- String representation methods -------------------------------
     def strUnit(self):
@@ -533,3 +531,8 @@ class Unum(object):
 # "as" became a reserved word in 2.5, so we can't use it.
 if sys.version_info < (2, 5):
     setattr(Unum, "as", Unum.asUnit)
+
+# if sys.version_info <= (3, 6) or getattr(Unum, 'VALUE_FORMAT', False):
+#     # Use the old string representation method
+#     setattr(Unum,' __str__', Unum.old_str)
+#     setattr(Unum, '__repr__', Unum.__str__)
