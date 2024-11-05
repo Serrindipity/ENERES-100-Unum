@@ -60,9 +60,9 @@ def generate_units(base_unit_name: str, base_unit_symbol: str, prefixes: dict[st
     import sys
     module = sys.modules[__name__]
     for name, value in units.items():
-        setattr(module, name, value)
+        if getattr(module, name, True):
+            setattr(module, name, value) # Executes is there's no attribute already in the space.
 
-del V # prevent namespace conflicts
 generate_units('volt', 'V', si_prefixes, W / A)
 
 
