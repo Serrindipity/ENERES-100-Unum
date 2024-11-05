@@ -38,20 +38,20 @@ si_prefixes = {
     "yocto": ("y", 10**-24),
 }
 
-def generate_units(base_unit_name: str, base_unit_symbol: str, base_unit_description: str, prefixes: dict[str : tuple]) -> None:
-    base_unit = unit(base_unit_symbol, 1, base_unit_description)  # Create the base unit
+def generate_units(base_unit_name: str, base_unit_symbol: str, prefixes: dict[str : tuple], value = 1) -> None:
+    base_unit = unit(base_unit_symbol, 1, base_unit_name)  # Create the base unit
     
     units = {}
     
     for prefix, (symbol_prefix, multiplier) in prefixes.items():
         # Create unit symbol and description by combining prefix with the base unit
         unit_symbol = symbol_prefix + base_unit_symbol
-        unit_description = prefix + base_unit_description
+        unit_description = prefix + base_unit_name
         
         # Generate unit using the unit() function
         u = unit(unit_symbol, multiplier * base_unit, unit_description)
         units[unit_symbol] = u
-        unit[prefix + base_unit_name] = u
+        unit[unit_description] = u
         
     
     # Include the base unit itself
@@ -62,7 +62,7 @@ def generate_units(base_unit_name: str, base_unit_symbol: str, base_unit_descrip
     for name, value in units.items():
         setattr(module, name, value)
 
-generate_units('volt', 'V', 'volt', si_prefixes)
+generate_units('volt', 'V', si_prefixes, W / A)
 
 
 year          = Y = y        = unit( 'y'        , 365 * D            , 'year'                       )
