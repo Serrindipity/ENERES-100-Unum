@@ -15,7 +15,7 @@ Pa         = PA      = unit( 'Pa'    , N / M**2       , 'pascal'         )
 J          = J       = unit( 'J'     , N*M            , 'joule'          )
 W          = W       = unit( 'W'     , J / s          , 'watt'           )
 C          = C       = unit( 'C'     , s * A          , 'coulomb'        )
-# V          = V       = unit( 'V'     , W / A          , 'volt'           ) Defined by generating units in custom.py
+V          = V       = unit( 'V'     , W / A          , 'volt'           ) # Defined by generating units in custom.py
 F          = F       = unit( 'F'     , C / V          , 'farad'          )
 ohm        = OHM     = unit( 'ohm'   , V / A          , 'ohm'            )
 S          = SIEMENS = unit( 'S'     , A / V          , 'siemens'        )
