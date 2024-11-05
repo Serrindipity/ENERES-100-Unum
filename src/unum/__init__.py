@@ -471,7 +471,7 @@ class Unum(object):
         if not numer and Unum.UNIT_HIDE_EMPTY:
             result = ''
         else:
-            result = Unum.UNIT_FORMAT % (numer + denom)  
+            result = Unum.UNIT_FORMAT % (numer + denom) 
         return result
 
     def __str__(self):
