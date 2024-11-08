@@ -24,7 +24,7 @@ ua = AU    = UA       = unit( 'ua'       , 1.49598E11 * M    , 'astronomical uni
 mile       = MILE     = unit( 'mile'     , 1609.34 * M       , 'statute mile'              )
 nmile      = NMILE    = unit( 'nmi'      , 1852 * M          , 'nautical mile'             )
 knot       = KNOT     = unit( 'knot'     , MILE / H          , 'knot'                      )
-a          = ARE      = unit( 'a'        , 1E2 * M**2        , 'are'                       )
+# a          = ARE      = unit( 'a'        , 1E2 * M**2        , 'are'                       )
 ha         = HA       = unit( 'ha'       , 1E4 * M**2        , 'hectare'                   )
 bar        = BAR      = unit( 'bar'      , 1E5 * PA          , 'bar'                       )
 angstrom   = ANGSTROM = unit( 'angstrom' , 1E-10 * M         , 'angstrom'                  )

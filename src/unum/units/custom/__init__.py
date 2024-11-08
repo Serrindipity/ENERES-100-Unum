@@ -14,6 +14,7 @@ from unum.units.others import *
 #    M  = unit(  'm' , 0          , 'meter'     )
 #    KM = unit( 'km' , 1000. * M  , 'kilometer' ) >>
 
+import sys
 
 si_prefixes = {
     "yotta": ("Y", 10**24),
@@ -39,7 +40,12 @@ si_prefixes = {
 }
 
 def generate_units(base_unit_name: str, base_unit_symbol: str, prefixes: dict[str : tuple], value = 1) -> None:
-    base_unit = unit(base_unit_symbol, 1, base_unit_name)  # Create the base unit
+    
+    module = sys.modules['unum.units']
+    namespace = set(i for i in dir(module) if not i.startswith('__'))
+    base_unit = getattr(module, base_unit_symbol, None)  # Create the base unit or get it
+    if not base_unit:
+        base_unit = unit(base_unit_symbol, 1, base_unit_name)
     
     units = {}
     
@@ -51,20 +57,19 @@ def generate_units(base_unit_name: str, base_unit_symbol: str, prefixes: dict[st
         # Generate unit using the unit() function
         u = unit(unit_symbol, multiplier * base_unit, unit_description)
         units[unit_symbol] = u
-        unit[unit_description] = u
+        units[unit_description] = u
         
     
     # Include the base unit itself
     units[base_unit_symbol] = base_unit
     
-    import sys
-    module = sys.modules[__name__]
     for name, value in units.items():
-        if getattr(module, name, True):
+        if base_unit_symbol not in namespace:
             setattr(module, name, value) # Executes is there's no attribute already in the space.
 
-generate_units('volt', 'V', si_prefixes, W / A)
-
+# Currently broken
+# generate_units('volt', 'V', si_prefixes, W / A)
+# print(dir(sys.modules[__name__]))
 
 year          = Y = y        = unit( 'y'        , 365 * D            , 'year'                       )
 Wh         = WH      = unit( 'Wh'    , J * 3600       , 'watt hour'      )
@@ -77,6 +82,28 @@ foot = ft = unit('ft', m * 0.3048, 'foot')
 acre = unit('acre', 4048 * ft**2, 'acre')
 cent = CENT = unit('¢', 0, 'cent')
 dollar = DOLLAR = unit('$', 100 * cent, 'dollar')
+
+# SI prefixes for volts
+YV = unit("YV", 10**24 * V, "yottavolt")    # Yottavolt
+ZV = unit("ZV", 10**21 * V, "zettavolt")    # Zettavolt
+EV = unit("EV", 10**18 * V, "exavolt")      # Exavolt
+PV = unit("PV", 10**15 * V, "petavolt")     # Petavolt
+TV = unit("TV", 10**12 * V, "teravolt")     # Teravolt
+GV = unit("GV", 10**9 * V, "gigavolt")      # Gigavolt
+MV = unit("MV", 10**6 * V, "megavolt")      # Megavolt
+kV = unit("kV", 10**3 * V, "kilovolt")      # Kilovolt
+hV = unit("hV", 10**2 * V, "hectovolt")     # Hectovolt
+daV = unit("daV", 10**1 * V, "decavolt")    # Decavolt
+dV = unit("dV", 10**-1 * V, "decivolt")     # Decivolt
+cV = unit("cV", 10**-2 * V, "centivolt")    # Centivolt
+mV = unit("mV", 10**-3 * V, "millivolt")    # Millivolt
+μV = unit("μV", 10**-6 * V, "microvolt")    # Microvolt
+nV = unit("nV", 10**-9 * V, "nanovolt")     # Nanovolt
+pV = unit("pV", 10**-12 * V, "picovolt")    # Picovolt
+fV = unit("fV", 10**-15 * V, "femtovolt")   # Femtovolt
+aV = unit("aV", 10**-18 * V, "attovolt")    # Attovolt
+zV = unit("zV", 10**-21 * V, "zeptovolt")   # Zeptovolt
+yV = unit("yV", 10**-24 * V, "yoctovolt")   # Yoctovolt
 
 
 # SI prefixes for watts
@@ -149,3 +176,4 @@ yWh = unit("yWh", 10**-24 * Wh, "yoctowatt-hour")   # Yoctowatt-hour
 # cleaning
 del Unum
 del unit
+del generate_units
